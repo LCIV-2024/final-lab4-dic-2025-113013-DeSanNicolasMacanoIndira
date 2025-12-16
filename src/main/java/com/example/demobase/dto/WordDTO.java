@@ -10,6 +10,5 @@ import lombok.NoArgsConstructor;
 public class WordDTO {
     private Long id;
     private String palabra;
-    private Boolean utilizada;
+    private boolean utilizada;
 }
-

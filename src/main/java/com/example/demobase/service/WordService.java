@@ -12,17 +12,18 @@ import java.util.stream.Collectors;
 @Service
 @RequiredArgsConstructor
 public class WordService {
-    
+
     private final WordRepository wordRepository;
-    
+
     public List<WordDTO> getAllWords() {
         return wordRepository.findAllOrdered().stream()
                 .map(this::toDTO)
                 .collect(Collectors.toList());
     }
-    
+
     private WordDTO toDTO(Word word) {
         return new WordDTO(word.getId(), word.getPalabra(), word.getUtilizada());
     }
 }
+
 
